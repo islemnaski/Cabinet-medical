@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Scanner;
 public abstract  class Secretaire  extends Personne implements Inscription{
 	 private int num_emplo ;
 	 public Secretaire( String nom, String prenom,String cin, int num_emplo) {
