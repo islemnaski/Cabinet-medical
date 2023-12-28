@@ -1,49 +1,54 @@
-public class Personne {
-	private String cin, nom, prenom;
+import java.util.Scanner;
+public  abstract class Medecin extends Personne implements Inscription  {
+	 
+ 
+	private int id_med ;
 
-	public Personne(String cin, String nom, String prenom) {
-		this.cin = cin;
-		this.nom = nom;
-		this.prenom = prenom;
-	
-	}
-
+	public Medecin(String cin, String nom, String prenom, int id_med) {
+		{	
+			super(cin,nom,prenom);
+		    this.id_med = id_med;
+		   
+		 }
+		
 	public String toString() {
-		return "cin: " + cin + ", nom: " + nom + ", prenom: " + prenom + "numtel: " + numtel ;
-	}
-
-	public String getCin() {
-		return cin;
-	}
-
-	public void setCin(String cin) {
-		this.cin = cin;
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
+		return  super.toString() + "id_med: "+ id_med ;
+	     }
 	
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
 	
-	public String getNumtel() {
-		return numtel;
-	}
+	  public void  sInscrire() {
+	        Scanner scanner = new Scanner(System.in);
 
-	public void setNumtel(String numtel) {
-		this.numtel = numtel;
-	}
+	        System.out.println("Entrez votre nom : ");
+	        String nom = scanner.nextLine();
+
+	        System.out.println("Entrez votre prénom : ");
+	        String prenom = scanner.nextLine();
+	        
+	        System.out.println("Entrez votre numéro cin : ");
+	          String cin = scanner.nextLine();
+
+	        System.out.println("Entrez votre id : ");
+	        int id = scanner.nextInt();
+	     
+	     }
+	            
+	          public  boolean  s_authentifier(int id_med) { 
+	    		  this.id_med.equals(id_med);
+	    	     }
+	           
+	        
+	        
+	        
+	        
+	        
+	public abstract void Gérer_dossier(); 
+		
+	
+
+			  
+
 }
+
 
 
